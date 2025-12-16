@@ -1,0 +1,298 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   ROOT COLORS
+===================== */
+:root {
+  --primary: #6366f1;
+  --secondary: #22d3ee;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --glass: rgba(255, 255, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.25);
+}
+
+/* =====================
+   BODY
+===================== */
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* =====================
+   NAVBAR (GLASS)
+===================== */
+nav {
+  backdrop-filter: blur(14px);
+  background: var(--glass);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav button {
+  margin-left: auto;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =====================
+   FORM CARD (GLASS)
+===================== */
+.form-box {
+  max-width: 420px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 18px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* =====================
+   INPUTS
+===================== */
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.25);
+  color: white;
+  font-size: 15px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #e5e7eb;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--secondary);
+}
+
+/* =====================
+   BUTTONS
+===================== */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* =====================
+   EVENT CARDS
+===================== */
+.event-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  border-radius: 18px;
+  padding: 25px;
+  margin: 25px 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+.event-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+  nav {
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* BRAND */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  font-size: 34px;
+  color: #22c55e;
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.8));
+}
+
+.brand-text {
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* LINKS */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.navbar-links a:hover {
+  opacity: 0.8;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* FIXED IMAGE CONTAINER */
+.event-image-wrapper {
+  width: 100%;
+  height: 180px;               /* ✅ FIXED MEDIUM SIZE */
+  border-radius: 14px;
+  overflow: hidden;            /* ✅ CUT EXTRA IMAGE */
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* IMAGE INSIDE CONTAINER */
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* ✅ KEEP IMAGE PROPORTION */
+  display: block;
+}
+
+.info-box {
+  background: rgba(34, 197, 94, 0.25);
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+
